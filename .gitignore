@@ -1,0 +1,28 @@
+# =========================
+# Java + Maven
+# =========================
+target/
+*.class
+*.log
+
+# =========================
+# Docker / Ambiente
+# =========================
+.env
+*.local
+*.pid
+*.tar
+
+# =========================
+# IDE / Sistema
+# =========================
+.vscode/
+.idea/
+*.iml
+.DS_Store
+Thumbs.db
+
+# =========================
+# Documenti privati
+# =========================
+DOCKER_FIX_GUIDE.md

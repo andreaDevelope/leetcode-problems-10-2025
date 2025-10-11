@@ -1,0 +1,5 @@
+services:
+  app:
+    build: .
+    container_name: java_app
+    # Rimuoviamo le porte e le dipendenze non necessarie per un'app console
