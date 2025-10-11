@@ -1,6 +1,6 @@
 package com.esempio;
 
-import com.esempio.leetcode.LeetCodeTestRunner;
+import com.esempio.leetcode.LeetCodeDemo;
 
 /**
  * Classe principale dell'applicazione Java.
@@ -26,15 +26,14 @@ public class App {
      * @param args argomenti passati dalla riga di comando
      */
     public static void main(String[] args) {
-        System.out.println("🎯 LEETCODE SOLUTIONS - JAVA PROJECT");
+        System.out.println("LEETCODE SOLUTIONS - JAVA PROJECT");
         System.out.println("=".repeat(50));
 
         // Mostra le statistiche delle soluzioni
-        LeetCodeTestRunner.showStatistics();
+        LeetCodeDemo.showStatistics();
 
-        // Esegui tutti i test LeetCode
-        LeetCodeTestRunner.runAllTests();
+        // Esegui tutti i demo LeetCode
+        LeetCodeDemo.runAllDemos();
 
-        System.out.println("\n🏁 Applicazione terminata con successo!");
     }
 }

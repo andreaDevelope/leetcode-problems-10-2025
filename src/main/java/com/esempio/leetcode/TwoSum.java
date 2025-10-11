@@ -15,7 +15,7 @@ public class TwoSum {
             System.out.println("Controllando elemento " + i + " (valore: " + nums[i] + ")");
 
             for (int j = i + 1; j < nums.length; j++) {
-                System.out.println("  ↳ Confrontando con elemento " + j + " (valore: " + nums[j] + ")");
+                System.out.println(" Confrontando con elemento " + j + " (valore: " + nums[j] + ")");
 
                 if (nums[i] + nums[j] == target) {
                     System.out.println("Trovata soluzione: " + nums[i] + " + " + nums[j] + " = " + target);

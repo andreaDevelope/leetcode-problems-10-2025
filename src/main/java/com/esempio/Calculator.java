@@ -22,25 +22,4 @@ public class Calculator {
         return (double) a / b;
     }
 
-    class Solution {
-        int[] nums = { 2, 7, 11, 15 };
-
-        public int[] twoSum(int[] nums, int target) {
-            int[] y = new int[2];
-
-            for (int i = 0; i < nums.length; i++) {
-
-                for (int j = 1; j < nums.length - 1; j++) {
-                    if (target - nums[i] == nums[j]) {
-                        y[0] = i;
-                        y[1] = j;
-                        return y;
-                    }
-                }
-
-            }
-            return y;
-
-        }
-    }
 }
