@@ -334,4 +334,43 @@ public class LeetCodeTest {
         assertEquals("Le soluzioni devono funzionare anche con stringhe lunghe",
                 resultSlidingWindow, resultBruteForce);
     }
+
+    @Test
+    public void testPalindromeNumber_BasicCases() {
+        assertTrue("121 dovrebbe essere palindromo", PalindromeNumber.isPalindrome(121));
+        assertFalse("-121 non dovrebbe essere palindromo", PalindromeNumber.isPalindrome(-121));
+        assertFalse("10 non dovrebbe essere palindromo", PalindromeNumber.isPalindrome(10));
+        assertTrue("0 dovrebbe essere palindromo", PalindromeNumber.isPalindrome(0));
+    }
+
+    @Test
+    public void testPalindromeNumber_LargerNumbers() {
+        assertTrue("12321 dovrebbe essere palindromo", PalindromeNumber.isPalindrome(12321));
+        assertFalse("12345 non dovrebbe essere palindromo", PalindromeNumber.isPalindrome(12345));
+        assertTrue("1221 dovrebbe essere palindromo", PalindromeNumber.isPalindrome(1221));
+        assertTrue("1 dovrebbe essere palindromo", PalindromeNumber.isPalindrome(1));
+    }
+
+    @Test
+    public void testPalindromeNumber_EdgeCases() {
+        assertTrue("11 dovrebbe essere palindromo", PalindromeNumber.isPalindrome(11));
+        assertFalse("12 non dovrebbe essere palindromo", PalindromeNumber.isPalindrome(12));
+        assertTrue("111 dovrebbe essere palindromo", PalindromeNumber.isPalindrome(111));
+        assertFalse("112 non dovrebbe essere palindromo", PalindromeNumber.isPalindrome(112));
+    }
+
+    @Test
+    public void testPalindromeNumber_NegativeNumbers() {
+        assertFalse("-1 non dovrebbe essere palindromo", PalindromeNumber.isPalindrome(-1));
+        assertFalse("-11 non dovrebbe essere palindromo", PalindromeNumber.isPalindrome(-11));
+        assertFalse("-121 non dovrebbe essere palindromo", PalindromeNumber.isPalindrome(-121));
+    }
+
+    @Test
+    public void testPalindromeNumber_ZeroAndSingleDigit() {
+        assertTrue("0 dovrebbe essere palindromo", PalindromeNumber.isPalindrome(0));
+        assertTrue("1 dovrebbe essere palindromo", PalindromeNumber.isPalindrome(1));
+        assertTrue("2 dovrebbe essere palindromo", PalindromeNumber.isPalindrome(2));
+        assertTrue("9 dovrebbe essere palindromo", PalindromeNumber.isPalindrome(9));
+    }
 }

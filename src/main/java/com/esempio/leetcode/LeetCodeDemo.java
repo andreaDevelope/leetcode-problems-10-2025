@@ -94,11 +94,35 @@ public class LeetCodeDemo {
         LongestSubstringWithoutRepeatingCharacters.testSolutions(s);
     }
 
+    // ==================== DEMO PER PALINDROME NUMBER ====================
+
+    public static void runPalindromeNumberTests() {
+        System.out.println("\n" + "🔄".repeat(20) + " PALINDROME NUMBER DEMO " + "🔄".repeat(20));
+
+        System.out.println("\n📝 Test Case 1: Esempio base");
+        System.out.println("121 -> " + PalindromeNumber.isPalindrome(121));
+
+        System.out.println("\n📝 Test Case 2: Numero negativo");
+        System.out.println("-121 -> " + PalindromeNumber.isPalindrome(-121));
+
+        System.out.println("\n📝 Test Case 3: Numero che finisce con 0");
+        System.out.println("10 -> " + PalindromeNumber.isPalindrome(10));
+
+        System.out.println("\n📝 Test Case 4: Zero");
+        System.out.println("0 -> " + PalindromeNumber.isPalindrome(0));
+
+        System.out.println("\n📝 Test Case 5: Palindromo più grande");
+        System.out.println("12321 -> " + PalindromeNumber.isPalindrome(12321));
+
+        System.out.println("\n📝 Test Case 6: Numero non palindromo");
+        System.out.println("12345 -> " + PalindromeNumber.isPalindrome(12345));
+
+        System.out.println("\n📝 Test Case 7: Palindromo con cifre ripetute");
+        System.out.println("1221 -> " + PalindromeNumber.isPalindrome(1221));
+    }
+
     // ==================== DEMO COMPLETE ====================
 
-    /**
-     * Esegue tutti i demo LeetCode disponibili
-     */
     public static void runAllDemos() {
         System.out.println("🚀 INIZIO DEMO SUITE LEETCODE");
         System.out.println("Data: " + java.time.LocalDateTime.now());
@@ -107,19 +131,17 @@ public class LeetCodeDemo {
         // Esegui tutti i demo
         runTwoSumTests();
         runLongestSubstringTests();
+        runPalindromeNumberTests();
 
         System.out.println("\n" + "✅".repeat(20) + " TUTTI I DEMO COMPLETATI " + "✅".repeat(20));
         System.out.println("Demo suite completata con successo!");
-        System.out.println("Problemi dimostrati: 2");
-        System.out.println("Soluzioni implementate: 4");
+        System.out.println("Problemi dimostrati: 3");
+        System.out.println("Soluzioni implementate: 5");
         System.out.println("=".repeat(80));
     }
 
     // ==================== STATISTICHE E INFORMAZIONI ====================
 
-    /**
-     * Mostra le statistiche delle soluzioni implementate
-     */
     public static void showStatistics() {
         System.out.println("\n📊 STATISTICHE SOLUZIONI LEETCODE");
         System.out.println("=".repeat(50));

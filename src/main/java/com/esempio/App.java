@@ -1,30 +1,16 @@
 package com.esempio;
 
 import com.esempio.leetcode.LeetCodeDemo;
+import com.esempio.leetcode.PalindromeNumber;
 
-/**
- * Classe principale dell'applicazione Java.
- * 
- * Questa applicazione contiene implementazioni di problemi LeetCode
- * con soluzioni ottimizzate e test completi.
- * 
- * Problemi implementati:
- * - Two Sum (LeetCode #1)
- * - Longest Substring Without Repeating Characters (LeetCode #3)
- * 
- * @author Esempio
- * @version 2.0
- * @since 1.0
- */
+// Problemi implementati:
+// Two Sum (LeetCode #1)
+//Longest Substring Without Repeating Characters (LeetCode #3)
+//Palindrome Number (LeetCode #9)
 public class App {
 
-    /**
-     * Metodo principale dell'applicazione.
-     * 
-     * Esegue i test LeetCode e mostra le statistiche delle soluzioni.
-     * 
-     * @param args argomenti passati dalla riga di comando
-     */
+    // Esegue i test LeetCode e mostra le statistiche delle soluzioni.
+
     public static void main(String[] args) {
         System.out.println("LEETCODE SOLUTIONS - JAVA PROJECT");
         System.out.println("=".repeat(50));
@@ -35,5 +21,6 @@ public class App {
         // Esegui tutti i demo LeetCode
         LeetCodeDemo.runAllDemos();
 
+        System.out.println(PalindromeNumber.isPalindrome(121));
     }
 }
