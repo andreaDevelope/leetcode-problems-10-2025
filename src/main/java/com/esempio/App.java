@@ -21,6 +21,7 @@ public class App {
         // Esegui tutti i demo LeetCode
         LeetCodeDemo.runAllDemos();
 
-        System.out.println(PalindromeNumber.isPalindrome(121));
+        System.out.println(PalindromeNumber.isPalindrome(31313));
+        System.out.println(PalindromeNumber.isPalindrome2(31313));
     }
 }

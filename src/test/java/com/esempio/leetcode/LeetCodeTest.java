@@ -373,4 +373,66 @@ public class LeetCodeTest {
         assertTrue("2 dovrebbe essere palindromo", PalindromeNumber.isPalindrome(2));
         assertTrue("9 dovrebbe essere palindromo", PalindromeNumber.isPalindrome(9));
     }
+
+    // ==================== TEST PER PALINDROME NUMBER OPTIMIZED ====================
+
+    @Test
+    public void testPalindromeNumber2_BasicCases() {
+        assertTrue("121 dovrebbe essere palindromo", PalindromeNumber.isPalindrome2(121));
+        assertFalse("-121 non dovrebbe essere palindromo", PalindromeNumber.isPalindrome2(-121));
+        assertFalse("10 non dovrebbe essere palindromo", PalindromeNumber.isPalindrome2(10));
+        assertTrue("0 dovrebbe essere palindromo", PalindromeNumber.isPalindrome2(0));
+    }
+
+    @Test
+    public void testPalindromeNumber2_LargerNumbers() {
+        assertTrue("12321 dovrebbe essere palindromo", PalindromeNumber.isPalindrome2(12321));
+        assertFalse("12345 non dovrebbe essere palindromo", PalindromeNumber.isPalindrome2(12345));
+        assertTrue("1221 dovrebbe essere palindromo", PalindromeNumber.isPalindrome2(1221));
+        assertTrue("1 dovrebbe essere palindromo", PalindromeNumber.isPalindrome2(1));
+    }
+
+    @Test
+    public void testPalindromeNumber2_EdgeCases() {
+        assertTrue("11 dovrebbe essere palindromo", PalindromeNumber.isPalindrome2(11));
+        assertFalse("12 non dovrebbe essere palindromo", PalindromeNumber.isPalindrome2(12));
+        assertTrue("111 dovrebbe essere palindromo", PalindromeNumber.isPalindrome2(111));
+        assertFalse("112 non dovrebbe essere palindromo", PalindromeNumber.isPalindrome2(112));
+    }
+
+    @Test
+    public void testPalindromeNumber2_NegativeNumbers() {
+        assertFalse("-1 non dovrebbe essere palindromo", PalindromeNumber.isPalindrome2(-1));
+        assertFalse("-11 non dovrebbe essere palindromo", PalindromeNumber.isPalindrome2(-11));
+        assertFalse("-121 non dovrebbe essere palindromo", PalindromeNumber.isPalindrome2(-121));
+    }
+
+    @Test
+    public void testPalindromeNumber2_ZeroAndSingleDigit() {
+        assertTrue("0 dovrebbe essere palindromo", PalindromeNumber.isPalindrome2(0));
+        assertTrue("1 dovrebbe essere palindromo", PalindromeNumber.isPalindrome2(1));
+        assertTrue("2 dovrebbe essere palindromo", PalindromeNumber.isPalindrome2(2));
+        assertTrue("9 dovrebbe essere palindromo", PalindromeNumber.isPalindrome2(9));
+    }
+
+    @Test
+    public void testPalindromeNumberSolutionsConsistency() {
+        int[] testCases = { 121, -121, 10, 0, 12321, 12345, 1221, 1, 11, 12, 111, 112, -1, -11, 2, 9 };
+
+        for (int x : testCases) {
+            boolean resultOriginal = PalindromeNumber.isPalindrome(x);
+            boolean resultOptimized = PalindromeNumber.isPalindrome2(x);
+
+            assertEquals("Le soluzioni devono produrre lo stesso risultato per: " + x,
+                    resultOriginal, resultOptimized);
+        }
+    }
+
+    @Test
+    public void testPalindromeNumber2_LargeNumbers() {
+        assertTrue("1234321 dovrebbe essere palindromo", PalindromeNumber.isPalindrome2(1234321));
+        assertFalse("1234567 non dovrebbe essere palindromo", PalindromeNumber.isPalindrome2(1234567));
+        assertTrue("1000001 dovrebbe essere palindromo", PalindromeNumber.isPalindrome2(1000001));
+        assertFalse("1000002 non dovrebbe essere palindromo", PalindromeNumber.isPalindrome2(1000002));
+    }
 }

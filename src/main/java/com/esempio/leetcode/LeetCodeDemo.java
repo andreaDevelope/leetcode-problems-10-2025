@@ -100,25 +100,29 @@ public class LeetCodeDemo {
         System.out.println("\n" + "🔄".repeat(20) + " PALINDROME NUMBER DEMO " + "🔄".repeat(20));
 
         System.out.println("\n📝 Test Case 1: Esempio base");
-        System.out.println("121 -> " + PalindromeNumber.isPalindrome(121));
+        System.out.println("121 -> isPalindrome: " + PalindromeNumber.isPalindrome(121) + ", isPalindrome2: " + PalindromeNumber.isPalindrome2(121));
 
         System.out.println("\n📝 Test Case 2: Numero negativo");
-        System.out.println("-121 -> " + PalindromeNumber.isPalindrome(-121));
+        System.out.println("-121 -> isPalindrome: " + PalindromeNumber.isPalindrome(-121) + ", isPalindrome2: " + PalindromeNumber.isPalindrome2(-121));
 
         System.out.println("\n📝 Test Case 3: Numero che finisce con 0");
-        System.out.println("10 -> " + PalindromeNumber.isPalindrome(10));
+        System.out.println("10 -> isPalindrome: " + PalindromeNumber.isPalindrome(10) + ", isPalindrome2: " + PalindromeNumber.isPalindrome2(10));
 
         System.out.println("\n📝 Test Case 4: Zero");
-        System.out.println("0 -> " + PalindromeNumber.isPalindrome(0));
+        System.out.println("0 -> isPalindrome: " + PalindromeNumber.isPalindrome(0) + ", isPalindrome2: " + PalindromeNumber.isPalindrome2(0));
 
         System.out.println("\n📝 Test Case 5: Palindromo più grande");
-        System.out.println("12321 -> " + PalindromeNumber.isPalindrome(12321));
+        System.out.println("12321 -> isPalindrome: " + PalindromeNumber.isPalindrome(12321) + ", isPalindrome2: " + PalindromeNumber.isPalindrome2(12321));
 
         System.out.println("\n📝 Test Case 6: Numero non palindromo");
-        System.out.println("12345 -> " + PalindromeNumber.isPalindrome(12345));
+        System.out.println("12345 -> isPalindrome: " + PalindromeNumber.isPalindrome(12345) + ", isPalindrome2: " + PalindromeNumber.isPalindrome2(12345));
 
         System.out.println("\n📝 Test Case 7: Palindromo con cifre ripetute");
-        System.out.println("1221 -> " + PalindromeNumber.isPalindrome(1221));
+        System.out.println("1221 -> isPalindrome: " + PalindromeNumber.isPalindrome(1221) + ", isPalindrome2: " + PalindromeNumber.isPalindrome2(1221));
+
+        System.out.println("\n📝 Test Case 8: Numeri a una cifra");
+        System.out.println("1 -> isPalindrome: " + PalindromeNumber.isPalindrome(1) + ", isPalindrome2: " + PalindromeNumber.isPalindrome2(1));
+        System.out.println("9 -> isPalindrome: " + PalindromeNumber.isPalindrome(9) + ", isPalindrome2: " + PalindromeNumber.isPalindrome2(9));
     }
 
     // ==================== DEMO COMPLETE ====================
@@ -156,10 +160,15 @@ public class LeetCodeDemo {
         System.out.println("Soluzione 1: Brute Force O(n³)");
         System.out.println("Soluzione 2: Sliding Window O(n)");
 
+        System.out.println("\n🔄 PROBLEMA 9: Palindrome Number");
+        System.out.println("Descrizione: Determina se un numero è palindromo");
+        System.out.println("Soluzione 1: String Conversion O(log n)");
+        System.out.println("Soluzione 2: Mathematical O(log n)");
+
         System.out.println("\n📈 RIEPILOGO:");
-        System.out.println("Problemi implementati: 2");
+        System.out.println("Problemi implementati: 3");
         System.out.println("Soluzioni brute force: 2");
-        System.out.println("Soluzioni ottimizzate: 2");
+        System.out.println("Soluzioni ottimizzate: 4");
         System.out.println("Copertura test: Completa");
 
         System.out.println("\n" + "=".repeat(50));
