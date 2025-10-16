@@ -1,8 +1,5 @@
 package com.esempio.leetcode;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class PalindromeNumber {
 
     // Time Complexity: O(log n) - Space Complexity: O(log n)
