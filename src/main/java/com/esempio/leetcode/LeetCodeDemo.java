@@ -106,6 +106,58 @@ public class LeetCodeDemo {
                 + PalindromeNumber.isPalindrome2(9));
     }
 
+    // ==================== DEMO PER MAXIMUM SUBARRAY ====================
+
+    public static void runMaximumSubarrayTests() {
+        System.out.println("\n".repeat(20) + " MAXIMUM SUBARRAY DEMO " + "📊".repeat(20));
+
+        System.out.println("\nTest Case 1: Esempio base");
+        testMaximumSubarraySolution(new int[] { -2, 1, -3, 4, -1, 2, 1, -5, 4 });
+
+        System.out.println("\nTest Case 2: Array con un elemento");
+        testMaximumSubarraySolution(new int[] { 1 });
+
+        System.out.println("\nTest Case 3: Array con tutti numeri positivi");
+        testMaximumSubarraySolution(new int[] { 5, 4, -1, 7, 8 });
+
+        System.out.println("\nTest Case 4: Array con tutti numeri negativi");
+        testMaximumSubarraySolution(new int[] { -5, -4, -1, -7, -8 });
+
+        System.out.println("\nTest Case 5: Array con un solo numero negativo");
+        testMaximumSubarraySolution(new int[] { -1 });
+
+        System.out.println("\nTest Case 6: Array con numeri misti");
+        testMaximumSubarraySolution(new int[] { 1, -2, 3, -4, 5, -6, 7 });
+
+        System.out.println("\nTest Case 7: Array con zero");
+        testMaximumSubarraySolution(new int[] { 0, -1, 2, -3, 4 });
+
+        System.out.println("\nTest Case 8: Array grande");
+        testMaximumSubarraySolution(new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 });
+    }
+
+    public static void runMaximumSubarrayTest(int[] nums) {
+        System.out.println("\nTEST SPECIFICO MAXIMUM SUBARRAY");
+        testMaximumSubarraySolution(nums);
+    }
+
+    private static void testMaximumSubarraySolution(int[] nums) {
+        System.out.println("Array: " + Arrays.toString(nums));
+        long startTime = System.currentTimeMillis();
+        int resultBruteForce = MaximumSubarray.maxSubArrayBruteForce(nums);
+        long bruteForceTime = System.currentTimeMillis() - startTime;
+        startTime = System.currentTimeMillis();
+        int resultKadane = MaximumSubarray.maxSubArray(nums);
+        long kadaneTime = System.currentTimeMillis() - startTime;
+        System.out.println("Brute Force O(n²): " + resultBruteForce + " (tempo: " + bruteForceTime + "ms)");
+        System.out.println("Kadane's Algorithm O(n): " + resultKadane + " (tempo: " + kadaneTime + "ms)");
+        System.out.println("Risultati identici: " + (resultBruteForce == resultKadane));
+        if (bruteForceTime > 0 && kadaneTime > 0) {
+            System.out.println("Miglioramento: " + (bruteForceTime / (double) kadaneTime) + "x");
+        }
+        System.out.println();
+    }
+
     // ==================== DEMO COMPLETE ====================
 
     public static void runAllDemos() {
@@ -116,11 +168,12 @@ public class LeetCodeDemo {
         runTwoSumTests();
         runLongestSubstringTests();
         runPalindromeNumberTests();
+        runMaximumSubarrayTests();
 
         System.out.println("\n".repeat(20) + " TUTTI I DEMO COMPLETATI " + "✅".repeat(20));
         System.out.println("Demo suite completata con successo!");
-        System.out.println("Problemi dimostrati: 3");
-        System.out.println("Soluzioni implementate: 5");
+        System.out.println("Problemi dimostrati: 4");
+        System.out.println("Soluzioni implementate: 6");
         System.out.println("=".repeat(80));
     }
 
@@ -145,10 +198,15 @@ public class LeetCodeDemo {
         System.out.println("Soluzione 1: String Conversion O(log n)");
         System.out.println("Soluzione 2: Mathematical O(log n)");
 
+        System.out.println("\nPROBLEMA 53: Maximum Subarray");
+        System.out.println("Descrizione: Trova il sottoarray con la somma più grande");
+        System.out.println("Soluzione 1: Brute Force O(n²)");
+        System.out.println("Soluzione 2: Kadane's Algorithm O(n)");
+
         System.out.println("\nRIEPILOGO:");
-        System.out.println("Problemi implementati: 3");
-        System.out.println("Soluzioni brute force: 2");
-        System.out.println("Soluzioni ottimizzate: 4");
+        System.out.println("Problemi implementati: 4");
+        System.out.println("Soluzioni brute force: 3");
+        System.out.println("Soluzioni ottimizzate: 5");
         System.out.println("Copertura test: Completa");
 
         System.out.println("\n" + "=".repeat(50));
@@ -236,6 +294,25 @@ public class LeetCodeDemo {
         System.out.println("Sliding Window O(n): " + slidingWindowTime + "ms");
         System.out.println("Miglioramento: " + (bruteForceTime2 / (double) slidingWindowTime) + "x");
 
+        System.out.println("\nMAXIMUM SUBARRAY Performance Test:");
+        int[] largeArray2 = new int[10000];
+        for (int i = 0; i < largeArray2.length; i++) {
+            largeArray2[i] = (int) (Math.random() * 2000 - 1000);
+        }
+
+        startTime = System.currentTimeMillis();
+        MaximumSubarray.maxSubArrayBruteForce(largeArray2);
+        long bruteForceTime3 = System.currentTimeMillis() - startTime;
+
+        startTime = System.currentTimeMillis();
+        MaximumSubarray.maxSubArray(largeArray2);
+        long kadaneTime = System.currentTimeMillis() - startTime;
+
+        System.out.println("Brute Force O(n²): " + bruteForceTime3 + "ms");
+        System.out.println("Kadane's Algorithm O(n): " + kadaneTime + "ms");
+        System.out.println("Miglioramento: " + (bruteForceTime3 / (double) kadaneTime) + "x");
+
         System.out.println("\n" + "=".repeat(50));
     }
+
 }

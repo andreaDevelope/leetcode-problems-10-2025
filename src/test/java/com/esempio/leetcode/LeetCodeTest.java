@@ -374,7 +374,8 @@ public class LeetCodeTest {
         assertTrue("9 dovrebbe essere palindromo", PalindromeNumber.isPalindrome(9));
     }
 
-    // ==================== TEST PER PALINDROME NUMBER OPTIMIZED ====================
+    // ==================== TEST PER PALINDROME NUMBER OPTIMIZED
+    // ====================
 
     @Test
     public void testPalindromeNumber2_BasicCases() {
@@ -434,5 +435,178 @@ public class LeetCodeTest {
         assertFalse("1234567 non dovrebbe essere palindromo", PalindromeNumber.isPalindrome2(1234567));
         assertTrue("1000001 dovrebbe essere palindromo", PalindromeNumber.isPalindrome2(1000001));
         assertFalse("1000002 non dovrebbe essere palindromo", PalindromeNumber.isPalindrome2(1000002));
+    }
+
+    // ==================== TEST PER MAXIMUM SUBARRAY ====================
+
+    @Test
+    public void testMaxSubArray_BasicCase() {
+        int[] nums = { -2, 1, -3, 4, -1, 2, 1, -5, 4 };
+        int expected = 6;
+        int result = MaximumSubarray.maxSubArray(nums);
+        assertEquals("Test caso base per maxSubArray", expected, result);
+    }
+
+    @Test
+    public void testMaxSubArray_SingleElement() {
+        int[] nums = { 1 };
+        int expected = 1;
+        int result = MaximumSubarray.maxSubArray(nums);
+        assertEquals("Test con un solo elemento", expected, result);
+    }
+
+    @Test
+    public void testMaxSubArray_AllPositive() {
+        int[] nums = { 5, 4, -1, 7, 8 };
+        int expected = 23;
+        int result = MaximumSubarray.maxSubArray(nums);
+        assertEquals("Test con tutti numeri positivi", expected, result);
+    }
+
+    @Test
+    public void testMaxSubArray_AllNegative() {
+        int[] nums = { -5, -4, -1, -7, -8 };
+        int expected = -1;
+        int result = MaximumSubarray.maxSubArray(nums);
+        assertEquals("Test con tutti numeri negativi", expected, result);
+    }
+
+    @Test
+    public void testMaxSubArray_SingleNegative() {
+        int[] nums = { -1 };
+        int expected = -1;
+        int result = MaximumSubarray.maxSubArray(nums);
+        assertEquals("Test con un solo numero negativo", expected, result);
+    }
+
+    @Test
+    public void testMaxSubArray_MixedNumbers() {
+        int[] nums = { 1, -2, 3, -4, 5, -6, 7 };
+        int expected = 7;
+        int result = MaximumSubarray.maxSubArray(nums);
+        assertEquals("Test con numeri misti", expected, result);
+    }
+
+    @Test
+    public void testMaxSubArray_WithZero() {
+        int[] nums = { 0, -1, 2, -3, 4 };
+        int expected = 4;
+        int result = MaximumSubarray.maxSubArray(nums);
+        assertEquals("Test con zero", expected, result);
+    }
+
+    @Test
+    public void testMaxSubArray_LargeArray() {
+        int[] nums = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+        int expected = 55;
+        int result = MaximumSubarray.maxSubArray(nums);
+        assertEquals("Test con array grande", expected, result);
+    }
+
+    @Test
+    public void testMaxSubArrayBruteForce_BasicCase() {
+        int[] nums = { -2, 1, -3, 4, -1, 2, 1, -5, 4 };
+        int expected = 6;
+        int result = MaximumSubarray.maxSubArrayBruteForce(nums);
+        assertEquals("Test caso base per maxSubArrayBruteForce", expected, result);
+    }
+
+    @Test
+    public void testMaxSubArrayBruteForce_SingleElement() {
+        int[] nums = { 1 };
+        int expected = 1;
+        int result = MaximumSubarray.maxSubArrayBruteForce(nums);
+        assertEquals("Test con un solo elemento", expected, result);
+    }
+
+    @Test
+    public void testMaxSubArrayBruteForce_AllPositive() {
+        int[] nums = { 5, 4, -1, 7, 8 };
+        int expected = 23;
+        int result = MaximumSubarray.maxSubArrayBruteForce(nums);
+        assertEquals("Test con tutti numeri positivi", expected, result);
+    }
+
+    @Test
+    public void testMaxSubArrayBruteForce_AllNegative() {
+        int[] nums = { -5, -4, -1, -7, -8 };
+        int expected = -1;
+        int result = MaximumSubarray.maxSubArrayBruteForce(nums);
+        assertEquals("Test con tutti numeri negativi", expected, result);
+    }
+
+    @Test
+    public void testMaxSubArrayBruteForce_SingleNegative() {
+        int[] nums = { -1 };
+        int expected = -1;
+        int result = MaximumSubarray.maxSubArrayBruteForce(nums);
+        assertEquals("Test con un solo numero negativo", expected, result);
+    }
+
+    @Test
+    public void testMaxSubArrayBruteForce_MixedNumbers() {
+        int[] nums = { 1, -2, 3, -4, 5, -6, 7 };
+        int expected = 7;
+        int result = MaximumSubarray.maxSubArrayBruteForce(nums);
+        assertEquals("Test con numeri misti", expected, result);
+    }
+
+    @Test
+    public void testMaxSubArrayBruteForce_WithZero() {
+        int[] nums = { 0, -1, 2, -3, 4 };
+        int expected = 4;
+        int result = MaximumSubarray.maxSubArrayBruteForce(nums);
+        assertEquals("Test con zero", expected, result);
+    }
+
+    @Test
+    public void testMaxSubArrayBruteForce_LargeArray() {
+        int[] nums = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+        int expected = 55;
+        int result = MaximumSubarray.maxSubArrayBruteForce(nums);
+        assertEquals("Test con array grande", expected, result);
+    }
+
+    @Test
+    public void testMaximumSubarraySolutionsConsistency() {
+        int[][] testCases = {
+                { -2, 1, -3, 4, -1, 2, 1, -5, 4 },
+                { 1 },
+                { 5, 4, -1, 7, 8 },
+                { -5, -4, -1, -7, -8 },
+                { -1 },
+                { 1, -2, 3, -4, 5, -6, 7 },
+                { 0, -1, 2, -3, 4 },
+                { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }
+        };
+
+        for (int[] nums : testCases) {
+            int resultBruteForce = MaximumSubarray.maxSubArrayBruteForce(nums);
+            int resultKadane = MaximumSubarray.maxSubArray(nums);
+
+            assertEquals("Le soluzioni devono produrre lo stesso risultato per: " + java.util.Arrays.toString(nums),
+                    resultBruteForce, resultKadane);
+        }
+    }
+
+    @Test
+    public void testMaxSubArray_EdgeCases() {
+        assertEquals(0, MaximumSubarray.maxSubArray(new int[] { 0 }));
+        assertEquals(-1, MaximumSubarray.maxSubArray(new int[] { -1, -2, -3 }));
+        assertEquals(3, MaximumSubarray.maxSubArray(new int[] { 1, 2 }));
+        assertEquals(1, MaximumSubarray.maxSubArray(new int[] { 1, -1, 1 }));
+    }
+
+    @Test
+    public void testMaxSubArray_PerformanceComparison() {
+        int[] largeArray = new int[1000];
+        for (int i = 0; i < largeArray.length; i++) {
+            largeArray[i] = (int) (Math.random() * 2000 - 1000);
+        }
+
+        int resultBruteForce = MaximumSubarray.maxSubArrayBruteForce(largeArray);
+        int resultKadane = MaximumSubarray.maxSubArray(largeArray);
+
+        assertEquals("Le soluzioni devono funzionare anche con array grandi", resultBruteForce, resultKadane);
     }
 }

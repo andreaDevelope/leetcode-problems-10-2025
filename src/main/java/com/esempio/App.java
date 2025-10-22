@@ -15,13 +15,11 @@ public class App {
         System.out.println("LEETCODE SOLUTIONS - JAVA PROJECT");
         System.out.println("=".repeat(50));
 
-        // Mostra le statistiche delle soluzioni
-        LeetCodeDemo.showStatistics();
-
         // Esegui tutti i demo LeetCode
         LeetCodeDemo.runAllDemos();
 
-        System.out.println(PalindromeNumber.isPalindrome(31313));
-        System.out.println(PalindromeNumber.isPalindrome2(31313));
+        // Mostra le statistiche delle soluzioni
+        LeetCodeDemo.showStatistics();
+
     }
 }
